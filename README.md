@@ -1,28 +1,30 @@
-## Entrepot de données 
+# Entrepot de données 
 
-# Processus 
+## Processus 
 
-Etude du marché de l'emploi et comparaison avec le taux de chomage
-
-
-# Grain de processus
+Etude sur le marché de l'emploi francais et comparaison avec le taux de chômage par trimestre.
 
 
-# Dimensions et Faits
+## Grain de processus
+
+
+## Dimensions et et table des faits
 
 ```bash
 
 ```
 
-# Schema en etoile
+## Schema en etoile
 
-![Image description](etoile.png)
-
-
-# Oracle - SQL Developper
+![shema en étoile](etoile.PNG)
 
 
-# Integration avec Talend
+## Oracle - SQL Developper
+
+
+## Integration avec Talend
+
+## Installation
 
 
 ## Contribution
