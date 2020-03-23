@@ -27,10 +27,11 @@ Etude sur le marché de l'emploi francais et comparaison avec le taux de chômag
 ## Installation
 
 
-## Contribution
+## Auteurs
 * Papa Farba Ndour
 * Babacar Ndour
 * Fatim Toure
 
 ## License
-[MIT License ](https://choosealicense.com/licenses/mit/)
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/) - see the LICENSE.md file for details.
