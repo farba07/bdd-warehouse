@@ -16,7 +16,7 @@ Etude sur le marché de l'emploi francais et comparaison avec le taux de chômag
 
 ## Schema en etoile
 
-![shema en étoile](image/etoile.PNG)
+![shema en étoile](images/etoile.PNG)
 
 
 ## Oracle - SQL Developper
