@@ -11,7 +11,8 @@ Etude sur le marché de l'emploi francais et comparaison avec le taux de chômag
 ## Dimensions et table des faits
 ### Dimension
 
-Etablissements : Cette dimension donne des informations sur le nombre d'entreprises dans chaque ville française, classées par taille.
+#### Etablissements : 
+Cette dimension donne des informations sur le nombre d'entreprises dans chaque ville française, classées par taille.
 Ces données proviennent de l'INSEE.
 
 ```bash
@@ -39,7 +40,8 @@ SET DEFINE OFF;
 
 ![shema en étoile](images/dimetablissement.PNG)
 
-ZONES : Cette dimension renseigne sur les données géographiques de chaque commune française principalement.
+#### Zone : 
+Cette dimension renseigne sur les données géographiques de chaque commune française principalement.
 source : INSEE
 
 ```bash
@@ -63,7 +65,8 @@ SET DEFINE OFF;
 ```
 ![shema en étoile](images/dimzones.PNG)
 
-Salaire : Cette dimension renseigne sur les salaires dans les villes francaises par catégories d'emploi, âge et sexe
+#### Salaire : 
+Cette dimension renseigne sur les salaires dans les villes francaises par catégories d'emploi, âge et sexe
 source : INSEE
 ```bash
 CREATE TABLE "SYSTEM"."DIM_SALAIRE" 
@@ -103,7 +106,8 @@ SET DEFINE OFF;
 ```
 ![shema en étoile](images/dimsalaire.PNG)
 
-Population : Ces données renseignent sur la population démographique en france.
+#### Population :
+Ces données renseignent sur la population démographique en france.
 source : INSEE
 
 ```bash
@@ -139,8 +143,27 @@ SET DEFINE OFF;
 
 ![shema en étoile](images/dimpopulation.PNG)
 
-## Schema en etoile
+## Schema en etoile complet
 
+```bash
+CREATE TABLE "SYSTEM"."DIM_FAITS_EMPLOI" 
+   (	"ZONE_ID" VARCHAR2(200 BYTE), 
+	"DATE_ID" NUMBER(8,0), 
+	"SALAIRE_ID" VARCHAR2(200 BYTE), 
+	"POPULATION_ID" VARCHAR2(200 BYTE), 
+	"ETABLISSEMENT_ID" VARCHAR2(200 BYTE), 
+	"CHOMAGE_ID" VARCHAR2(200 BYTE), 
+	"TAUX_EMPLOI_PAR_ZONE" FLOAT(126), 
+	"TAUX_CHOMAGE_PAR_ZONE" FLOAT(126)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.DIM_FAITS_EMPLOI
+SET DEFINE OFF;
+```
 ![shema en étoile](images/etoile.PNG)
 
 
