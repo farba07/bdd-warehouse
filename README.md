@@ -11,9 +11,8 @@ Etude sur le marché de l'emploi francais et comparaison avec le taux de chômag
 ## Dimensions et table des faits
 ### Dimension
 
-#### Etablissements : 
-Cette dimension donne des informations sur le nombre d'entreprises dans chaque ville française, classées par taille.
-Ces données proviennent de l'INSEE.
+##### * Etablissements : Cette dimension donne des informations sur le nombre d'entreprises dans chaque ville française, classées par taille.
+source : INSEE.
 
 ```bash
  CREATE TABLE "SYSTEM"."DIM_ETABLISSEMENTS_PAR_COMMUNE" 
@@ -40,8 +39,7 @@ SET DEFINE OFF;
 
 ![shema en étoile](images/dimetablissement.PNG)
 
-#### Zone : 
-Cette dimension renseigne sur les données géographiques de chaque commune française principalement.
+##### * Zones : cette dimension renseigne sur les données géographiques de chaque commune française principalement.
 source : INSEE
 
 ```bash
@@ -65,8 +63,7 @@ SET DEFINE OFF;
 ```
 ![shema en étoile](images/dimzones.PNG)
 
-#### Salaire : 
-Cette dimension renseigne sur les salaires dans les villes francaises par catégories d'emploi, âge et sexe
+##### * Salaire : cette dimension renseigne sur les salaires dans les villes francaises par catégories d'emploi, âge et sexe
 source : INSEE
 ```bash
 CREATE TABLE "SYSTEM"."DIM_SALAIRE" 
@@ -106,8 +103,7 @@ SET DEFINE OFF;
 ```
 ![shema en étoile](images/dimsalaire.PNG)
 
-#### Population :
-Ces données renseignent sur la population démographique en france.
+##### * Population : ces données renseignent sur la population démographique en france.
 source : INSEE
 
 ```bash
@@ -143,7 +139,7 @@ SET DEFINE OFF;
 
 ![shema en étoile](images/dimpopulation.PNG)
 
-## Schema en etoile complet
+### Schema en etoile complet
 
 ```bash
 CREATE TABLE "SYSTEM"."DIM_FAITS_EMPLOI" 
@@ -165,7 +161,6 @@ REM INSERTING into SYSTEM.DIM_FAITS_EMPLOI
 SET DEFINE OFF;
 ```
 ![shema en étoile](images/etoile.PNG)
-
 
 ## Oracle - SQL Developper
 
