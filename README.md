@@ -240,6 +240,9 @@ SET DEFINE OFF;
 
 ## Installation
 
+* Oracle XE 18c
+* Talend Version 7.3.1
+* Sql Developper
 
 ## Auteurs
 * Papa Farba Ndour
