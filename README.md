@@ -9,7 +9,7 @@ Etude sur le marché de l'emploi francais et comparaison avec le taux de chômag
 
 
 ## Dimensions et table des faits
-### Dimension
+### Dimensions :
 
 ##### * Etablissements : Cette dimension donne des informations sur le nombre d'entreprises dans chaque ville française, classées par taille.
 source : INSEE.
@@ -139,7 +139,57 @@ SET DEFINE OFF;
 
 ![shema en étoile](images/dimpopulation.PNG)
 
-### Schema en etoile complet
+##### * Chomage : Ces dimension renseigne sur le taux de chomage en 2019 par trimestre.
+source : INSEE
+
+```bash
+CREATE TABLE "SYSTEM"."DIM_CHOMAGE" 
+   (	"CHOMAGE_ID" VARCHAR2(200 BYTE), 
+	"TAUX_T1" FLOAT(126), 
+	"TAUX_T2" FLOAT(126), 
+	"TAUX_T3" FLOAT(126)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.DIM_CHOMAGE
+SET DEFINE OFF;
+```
+![shema en étoile](images/dimchomage.PNG)
+
+#### * Date : 
+```bash
+CREATE TABLE "SYSTEM"."DIM_DATE" 
+   (	"DATE_ID" NUMBER(10,0), 
+	"DATE_DU_JOUR" DATE, 
+	"ANNEE_CALENDAIRE" NUMBER(10,0), 
+	"SEMESTRE" NUMBER(10,0), 
+	"LIBELLE_SEMESTRE" VARCHAR2(200 CHAR), 
+	"TRIMESTRE" NUMBER(10,0), 
+	"LIBELLE_TRIMESTRE" VARCHAR2(200 CHAR), 
+	"ANNEE_MOIS" NUMBER(10,0), 
+	"MOIS" NUMBER(10,0), 
+	"LIBELLE_MOIS" VARCHAR2(200 CHAR), 
+	"SEMAINE" NUMBER(10,0), 
+	"JOUR" NUMBER(10,0), 
+	"LIBELLE_JOUR" VARCHAR2(200 CHAR), 
+	"JOUR_FERIE" CHAR(5 CHAR), 
+	"JOUR_OUVRE" CHAR(5 CHAR), 
+	"QUANTIEME_JOUR" NUMBER(10,0)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.DIM_DATE
+SET DEFINE OFF;
+```
+![shema en étoile](images/dimdate.PNG)
+
+### Schéma en étoile complet
 
 ```bash
 CREATE TABLE "SYSTEM"."DIM_FAITS_EMPLOI" 
@@ -161,9 +211,6 @@ REM INSERTING into SYSTEM.DIM_FAITS_EMPLOI
 SET DEFINE OFF;
 ```
 ![shema en étoile](images/etoile.PNG)
-
-## Oracle - SQL Developper
-
 
 ## Integration avec Talend
 
