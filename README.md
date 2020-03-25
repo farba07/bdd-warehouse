@@ -1,12 +1,8 @@
 # Entrepot de données 
 
-## Processus 
+## Processus
 
-Etude sur le marché de l'emploi francais et comparaison avec le taux de chômage par trimestre.
-
-
-## Grain de processus
-
+Etude sur le marché de l'emploi francais et comparaison avec le taux de chômage par trimestre en 2019.
 
 ## Dimensions et table des faits
 ### Dimensions :
