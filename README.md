@@ -212,7 +212,31 @@ SET DEFINE OFF;
 ```
 ![shema en étoile](images/etoile.PNG)
 
-## Integration avec Talend
+## Integration des données avec Talend
+
+#### * Dimension Etablissements : 
+
+![shema en étoile](talend/tetablissement.PNG)
+
+#### * Dimension Zones :
+
+![shema en étoile](talend/tzones.PNG)
+
+#### * Dimension Salaire :
+
+![shema en étoile](talend/tsalaire.PNG)
+
+#### * Dimension Population :
+
+![shema en étoile](talend/tpopulation.PNG)
+
+#### * Dimension chomage : 
+
+![shema en étoile](talend/tchomage.PNG)
+
+#### * Table des faits : 
+
+![shema en étoile](talend/talend.PNG)
 
 ## Installation
 
